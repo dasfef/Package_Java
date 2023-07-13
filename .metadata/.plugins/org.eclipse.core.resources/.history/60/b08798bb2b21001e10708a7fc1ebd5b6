@@ -1,0 +1,13 @@
+
+public EventRegist() {
+		System.out.println("## 이벤트 등록을 위한 이름과 이메일 입력");
+		System.out.print("Name: ");
+		String uname = scan.next();
+		System.out.print("email: ");
+		String email = scan.next();
+		
+		connectDB();
+		registUser(uname, email);
+		printList();
+		closeDB();
+}

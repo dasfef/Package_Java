@@ -1,0 +1,17 @@
+import java.sql.Connection;
+import java.util.Scanner;
+
+public class MysqlConnect {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		String jdbcDrvier = "com.mysql.jdbc.Driver";
+		String jdbcUrl = "jdbc:mysql://localhost/shopdb";
+		Connection conn;
+		
+		PreparedStatement pstmt;
+		ResultSet rs;
+	}
+
+}

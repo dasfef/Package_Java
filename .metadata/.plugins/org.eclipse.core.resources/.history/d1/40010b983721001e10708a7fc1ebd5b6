@@ -1,0 +1,45 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+public class MysqlConnect {
+	Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		
+		String jdbcDrvier = "com.mysql.jdbc.Driver";
+		String jdbcUrl = "jdbc:mysql://localhost/shopdb";
+		Connection conn;
+		
+		PreparedStatement pstmt;
+		ResultSet rs;
+		
+		
+	}
+	
+	public EventRegist() {
+		System.out.println("## 이벤트 등록을 위한 이름과 이메일 입력");
+		System.out.print("Name: ");
+		String uname = scan.next();
+		System.out.print("email: ");
+		String email = scan.next();
+		
+		connectDB();
+		registUser(uname, email);
+		printList();
+		closeDB();
+	}
+
+	public void connectDB() {
+		try {
+			// JDBC 드라이버 로드
+			Class.forName(jdbcDrvier);
+			
+			// 데이터베이스 연결
+			conn = DrvierManager.getConnection(jdbcUrl, "root", "1234");
+		} catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+}
